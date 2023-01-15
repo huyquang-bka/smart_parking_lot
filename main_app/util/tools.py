@@ -52,7 +52,6 @@ def detect(image):
     for bbox_plate in bboxes_plate:
         x1, y1, x2, y2, cls, conf = bbox_plate
         crop_plate = image[y1:y2, x1:x2]
-        cv2.imwrite("crop_plate.jpg", crop_plate)
         bbox_digit = detector_digit.detect(crop_plate)
         if not bbox_digit:
             continue
