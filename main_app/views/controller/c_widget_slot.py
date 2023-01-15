@@ -17,7 +17,6 @@ class WidgetSlot(QtWidgets.QWidget):
         self.ui.qline_plate_digit.setText(slot.lp_text)
         self.ui.qline_type_vehicle.setText(slot.type_vehicle)
         self.ui.qline_slot.setText(slot.id)
-        cv2.imwrite("test.jpg", slot.image)
         if slot.image is not None:
             rgb_img = cv2.cvtColor(slot.image, cv2.COLOR_BGR2RGB)
         else:
