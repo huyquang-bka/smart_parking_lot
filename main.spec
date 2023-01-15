@@ -48,3 +48,5 @@ coll = COLLECT(
     upx_exclude=[],
     name='main',
 )
+
+hiddenimports=['models', 'utils']
