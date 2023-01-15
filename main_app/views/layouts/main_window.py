@@ -40,9 +40,13 @@ class Ui_MainWindow(object):
 "border-radius: 6px;")
         self.combo_options.setObjectName("combo_options")
         self.combo_options.addItem("")
-        self.combo_options.addItem("")
         self.btn_choose_file = QtWidgets.QPushButton(self.groupBox)
         self.btn_choose_file.setGeometry(QtCore.QRect(110, 40, 81, 26))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_choose_file.sizePolicy().hasHeightForWidth())
+        self.btn_choose_file.setSizePolicy(sizePolicy)
         self.btn_choose_file.setMinimumSize(QtCore.QSize(0, 0))
         self.btn_choose_file.setStyleSheet("QPushButton {\n"
 "            background-color: rgb(255, 255, 255); \n"
@@ -92,8 +96,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.combo_options.setItemText(0, _translate("MainWindow", "Vào"))
-        self.combo_options.setItemText(1, _translate("MainWindow", "Ra"))
-        self.btn_choose_file.setText(_translate("MainWindow", "Choose File"))
+        self.btn_choose_file.setText(_translate("MainWindow", "Chọn ảnh"))
         self.btn_start.setText(_translate("MainWindow", "Chấp nhận"))
         self.qtext_file_path.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
