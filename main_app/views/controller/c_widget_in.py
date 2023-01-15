@@ -95,7 +95,8 @@ class WidgetIn(QtWidgets.QWidget):
         self.update()
 
     def show_image(self, rgb_img):
-        rgb_img = cv2.resize(rgb_img, (self.ui.qlabel_frame.width(), self.ui.qlabel_frame.height()))
+        # rgb_img = cv2.resize(rgb_img, (self.ui.qlabel_frame.width(), self.ui.qlabel_frame.height()))
+        rgb_img = cv2.resize(rgb_img, (1280, 720))
         qt_img = QtGui.QPixmap.fromImage(
             QtGui.QImage(rgb_img.data, rgb_img.shape[1], rgb_img.shape[0], QtGui.QImage.Format_RGB888)).scaled(
             self.ui.qlabel_frame.width(), self.ui.qlabel_frame.height())
