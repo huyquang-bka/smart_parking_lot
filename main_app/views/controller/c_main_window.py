@@ -31,7 +31,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def connect_btn_signals(self):
         self.ui.btn_choose_file.clicked.connect(self.choose_file)
-        self.ui.btn_start.clicked.connect(self.start)
+        # self.ui.btn_start.clicked.connect(self.start)
         
     def choose_file(self):
         file_name, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", QtCore.QDir.currentPath(), "Image Files (*.png *.jpg *.jpeg)")
