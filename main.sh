@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-conda activate base
+conda activate datn
 python main.py
