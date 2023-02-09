@@ -49,4 +49,5 @@ coll = COLLECT(
     name='Smart Parking App',
 )
 
+
 hiddenimports=['models', 'utils']
