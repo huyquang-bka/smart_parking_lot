@@ -40,3 +40,4 @@ coll = COLLECT(
     upx_exclude=[],
     name='Smart Parking App',
 )
+

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>665</width>
+    <width>836</width>
     <height>498</height>
    </rect>
   </property>
@@ -16,6 +16,12 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QGroupBox" name="groupBox_2">
+     <property name="maximumSize">
+      <size>
+       <width>350</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(173, 221, 230);
 border-radius: 6px;
@@ -37,197 +43,244 @@ border-radius: 6px;</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QFrame" name="qframe_map">
+      <item row="1" column="0">
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>200</height>
+         </size>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255 );
-border: 2px solid black;
-border-radius: 6px;</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>200</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(173, 221, 230);
+         <string notr="true">background-color: rgb(173, 221, 230);
 border: 2px solid black;
 border-radius: 6px;
 </string>
-     </property>
-     <property name="title">
-      <string/>
-     </property>
-     <widget class="QLineEdit" name="qline_plate_digit">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>60</y>
-        <width>181</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLineEdit" name="qline_plate_digit">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>60</y>
+           <width>111</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
 border: 2px solid black;
 border-radius: 6px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="placeholderText">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="qline_type_vehicle">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>20</y>
-        <width>181</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="qline_type_vehicle">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>20</y>
+           <width>111</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
 border: 2px solid black;
 border-radius: 6px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="placeholderText">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="qline_slot">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>99</y>
-        <width>181</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="qline_slot">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>99</y>
+           <width>111</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
 border: 2px solid black;
 border-radius: 6px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="placeholderText">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
 border: 2px solid black;
 border-radius: 6px;</string>
-      </property>
-      <property name="text">
-       <string>Loại xe</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>60</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+         </property>
+         <property name="text">
+          <string>Loại xe</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>60</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
 border: 2px solid black;
 border-radius: 6px;</string>
-      </property>
-      <property name="text">
-       <string>Biển số xe</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>100</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+         </property>
+         <property name="text">
+          <string>Biển số xe</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>100</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
 border: 2px solid black;
 border-radius: 6px;</string>
-      </property>
-      <property name="text">
-       <string>Chỗ đỗ</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_apply">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>150</y>
-        <width>341</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
+         </property>
+         <property name="text">
+          <string>Chỗ đỗ</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btn_apply">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>150</y>
+           <width>271</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
             background-color: rgb(255, 255, 255); 
         }
 QPushButton:pressed {
             background-color: rgb(127, 127, 127);
         }</string>
-      </property>
-      <property name="text">
-       <string>Chấp nhận</string>
-      </property>
-     </widget>
+         </property>
+         <property name="text">
+          <string>Chấp nhận</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QFrame" name="qframe_map">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255 );
+border: 2px solid black;
+border-radius: 6px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="groupBox_B">
+        <property name="title">
+         <string>Khu B (Ô tô)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QGroupBox" name="groupBox_D">
+        <property name="title">
+         <string>Khu D (Xe máy)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QGroupBox" name="groupBox_C">
+        <property name="title">
+         <string>Khu C (Xe máy)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="groupBox_A">
+        <property name="title">
+         <string>Khu A (Ô tô)</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+border: 2px solid black;
+border-radius: 6px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

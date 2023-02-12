@@ -10,7 +10,9 @@ class WidgetIn(QtWidgets.QWidget):
         super().__init__(parent)
         self.ui = Ui_WidgetIn()
         self.widget_slot = WidgetSlot()
+        self.groupBox_dict = {}
         self.ui.setupUi(self)
+        self.setup_ui()
         
         self.image = None
         
@@ -22,6 +24,23 @@ class WidgetIn(QtWidgets.QWidget):
         
         self.connect_btn_signals()
         
+    def setup_ui(self):
+        pass
+    
+    def create_slot(self, slot_name):
+        self.groupBox_dict[slot_name] = []
+        for i in range(7):
+                label = QtWidgets.QLabel(self.ui.groupBox_A)
+                label.setMaximumHeight(40)
+                label.setStyleSheet("background-color: rgb(0, 255, 0);\n"
+        "border: 2px solid black;\n"
+        "border-radius: 6px;")
+                label.setText(f"A {i+1}")
+                label.setAlignment(QtCore.Qt.AlignCenter)
+                label.setObjectName(f"label_A_{i+1}")
+                self.ui.gridLayout_4.addWidget(label, i, 0, 1, 1)
+                self.groupBox_dict[slot_name].append(label)
+    
     def connect_btn_signals(self):
         self.ui.btn_apply.clicked.connect(self.apply)
             
