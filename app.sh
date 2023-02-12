@@ -3,4 +3,4 @@
 # git add .
 # git commit -m "update"
 # git pull
-conda run -n base python main.py
+conda run -n datn python main.py
