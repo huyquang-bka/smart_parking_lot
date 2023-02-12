@@ -10,6 +10,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         
+        # self.ui.combo_options.hide()
+        
         self.widget_in = WidgetIn(self)
         self.widget_out = WidgetOut(self)
         
@@ -27,7 +29,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
         self.connect_btn_signals()
         
-        self.connect_signals()
+        # self.connect_signals()
         
     def connect_btn_signals(self):
         self.ui.btn_choose_file.clicked.connect(self.choose_file)
@@ -38,19 +40,19 @@ class MainWindow(QtWidgets.QMainWindow):
         if file_name:
             self.ui.qtext_file_path.setText(file_name)
             
-    def connect_signals(self):
-        self.ui.combo_options.currentIndexChanged.connect(self.change_option)
+    # def connect_signals(self):
+    #     self.ui.combo_options.currentIndexChanged.connect(self.change_option)
         
-    def change_option(self):
-        current_index = self.ui.combo_options.currentIndex()
-        if current_index == 0:
-            self.widget_in.show()
-            self.widget_out.hide()
-            self.current_widget = self.widget_in
-        elif current_index == 1:
-            self.widget_in.hide()
-            self.widget_out.show()
-            self.current_widget = self.widget_out
+    # def change_option(self):
+    #     current_index = self.ui.combo_options.currentIndex()
+    #     if current_index == 0:
+    #         self.widget_in.show()
+    #         self.widget_out.hide()
+    #         self.current_widget = self.widget_in
+    #     elif current_index == 1:
+    #         self.widget_in.hide()
+    #         self.widget_out.show()
+    #         self.current_widget = self.widget_out
             
     def start(self):
         if not self.ui.qtext_file_path.toPlainText():

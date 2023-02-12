@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from ..layouts.widget_in import Ui_WidgetIn
 from ..controller.c_widget_slot import WidgetSlot
-from ...object.slot_object import SlotObject
+from ...object.slot_object_2 import SlotObject
 from ...util.tools import detect
 import cv2
 
@@ -16,9 +16,9 @@ class WidgetIn(QtWidgets.QWidget):
         
         self.image = None
         
-        self.grid_layout_cameras = QtWidgets.QGridLayout()
-        self.grid_layout_cameras.setContentsMargins(0, 0, 0, 0)
-        self.ui.qframe_map.setLayout(self.grid_layout_cameras)
+        # self.grid_layout_cameras = QtWidgets.QGridLayout()
+        # self.grid_layout_cameras.setContentsMargins(0, 0, 0, 0)
+        # self.ui.qframe_map.setLayout(self.grid_layout_cameras)
         
         self.create_slots()
         
@@ -27,50 +27,63 @@ class WidgetIn(QtWidgets.QWidget):
     def setup_ui(self):
         pass
     
-    def create_slot(self, slot_name):
-        self.groupBox_dict[slot_name] = []
-        for i in range(7):
-                label = QtWidgets.QLabel(self.ui.groupBox_A)
-                label.setMaximumHeight(40)
-                label.setStyleSheet("background-color: rgb(0, 255, 0);\n"
-        "border: 2px solid black;\n"
-        "border-radius: 6px;")
-                label.setText(f"A {i+1}")
-                label.setAlignment(QtCore.Qt.AlignCenter)
-                label.setObjectName(f"label_A_{i+1}")
-                self.ui.gridLayout_4.addWidget(label, i, 0, 1, 1)
-                self.groupBox_dict[slot_name].append(label)
-    
     def connect_btn_signals(self):
         self.ui.btn_apply.clicked.connect(self.apply)
             
     def create_slots(self):
         self.slots = {}
-        for i in range(5):
-            for j in range(5):
-                slot_text = i * 5 + j + 1
-                slot = SlotObject(self.ui.qframe_map)
-                slot.sig_clicked.connect(self.show_slot)
-                slot.id = str(slot_text)
-                slot.setText(str(slot.id))
-                self.grid_layout_cameras.addWidget(slot, i, j)
-                self.slots[str(slot_text)] = slot
+        for i in range(7):
+            slot_text = i + 1
+            
+            #a
+            slot_a = SlotObject(self.ui.groupBox_A)
+            slot_a.sig_clicked.connect(self.show_slot)
+            slot_a.id = f"A{slot_text}"
+            slot_a.setText(str(slot_a.id))
+            self.ui.gridLayout_A.addWidget(slot_a, i, 0)
+            self.slots[f"A{slot_text}"] = slot_a
+            
+            # b
+            slot_b = SlotObject(self.ui.groupBox_B)
+            slot_b.sig_clicked.connect(self.show_slot)
+            slot_b.id = f"B{slot_text}"
+            slot_b.setText(str(slot_b.id))
+            self.ui.gridLayout_B.addWidget(slot_b, i, 0)
+            self.slots[f"B{slot_text}"] = slot_b
+            
+            #c
+            slot_c = SlotObject(self.ui.groupBox_C)
+            slot_c.sig_clicked.connect(self.show_slot)
+            slot_c.id = f"C{slot_text}"
+            slot_c.setText(str(slot_c.id))
+            self.ui.gridLayout_C.addWidget(slot_c, i, 0)
+            self.slots[f"C{slot_text}"] = slot_c
+            
+            # #d
+            slot_d = SlotObject(self.ui.groupBox_D)
+            slot_d.sig_clicked.connect(self.show_slot)
+            slot_d.id = f"D{slot_text}"
+            slot_d.setText(str(slot_d.id))
+            self.ui.gridLayout_D.addWidget(slot_d, i, 0)
+            self.slots[f"D{slot_text}"] = slot_d
+
     
     def apply(self):
-        slot_text = self.ui.qline_slot.text()
-        if not self.ui.qline_plate_digit.text() or not self.ui.qline_type_vehicle.text() or not self.ui.qline_slot.text():
+        slot_text = self.ui.qcomboBox_slot.currentText()
+        if not self.ui.qline_plate_digit.text() or not self.ui.qline_type_vehicle.text():
             QtWidgets.QMessageBox.warning(self, "Warning", "Nhập đầy đủ thông tin")
             return
-        try:
-            slot_text = int(slot_text)
-        except:
-            QtWidgets.QMessageBox.warning(self, "Warning", "Chọn chỗ đỗ")
+        if not slot_text in self.slots.keys():
+            QtWidgets.QMessageBox.warning(self, "Warning", "Chọn chỗ đỗ phù hợp")
             return
-        if slot_text < 1 or slot_text > 25:
-            QtWidgets.QMessageBox.warning(self, "Warning", "Chọn chỗ đỗ từ 1 đến 25")
-            return
+        # if slot_text < 1 or slot_text > 25:
+        #     QtWidgets.QMessageBox.warning(self, "Warning", "Chọn chỗ đỗ từ 1 đến 25")
+        #     return
         if self.slots[str(slot_text)].busy:
             QtWidgets.QMessageBox.warning(self, "Warning", "Chỗ đỗ đã có xe")
+            return
+        if self.ui.qline_type_vehicle.text().lower() == "Ô tô".lower() and ("C" in slot_text or "D" in slot_text):
+            QtWidgets.QMessageBox.warning(self, "Warning", "Ô tô chỉ được đỗ ở A và B")
             return
         slot_text = str(slot_text)
         for slot in self.slots.values():
@@ -78,7 +91,7 @@ class WidgetIn(QtWidgets.QWidget):
                 slot.busy = False
                 slot.color = (0, 255, 0)
                 slot.apply()
-        slot_id = self.ui.qline_slot.text()
+        slot_id = slot_text
         slot = self.slots[slot_id]
         slot.busy = True
         slot.color = (255, 0, 0)
@@ -91,7 +104,7 @@ class WidgetIn(QtWidgets.QWidget):
         self.image = cv2.imread(fn)
         self.ui.qline_plate_digit.setText("In progress...")
         self.ui.qline_type_vehicle.setText("In progress...")
-        self.ui.qline_slot.setText("In progress...")
+        # self.ui.qline_slot.setText("In progress...")
         cls, lp_text = detect(self.image)
         if cls in [2, 5, 7]:
             cls = "Ô tô"
@@ -99,10 +112,27 @@ class WidgetIn(QtWidgets.QWidget):
             cls = "Xe máy"
         self.ui.qline_plate_digit.setText(lp_text.upper())
         self.ui.qline_type_vehicle.setText(cls)
-        for slot in self.slots.values():
+        #set list slot to combo box
+        self.ui.qcomboBox_slot.clear()
+        items = []
+        for key in sorted(self.slots.keys()):
+            slot = self.slots[key]
+            if cls.lower() == "Ô tô".lower() and ("C" in key or "D" in key):
+                continue
+            if cls.lower() == "Xe máy".lower() and ("A" in key or "B" in key):
+                continue
+            if not slot.busy:
+                items.append(str(slot.id))
+        self.ui.qcomboBox_slot.addItems(items)
+        for key in sorted(self.slots.keys()):
+            slot = self.slots[key]
+            if cls.lower() == "Ô tô".lower() and ("C" in key or "D" in key):
+                continue
+            if cls.lower() == "Xe máy".lower() and ("A" in key or "B" in key):
+                continue
             if not slot.busy:
                 slot.color = (255, 255, 0)
-                self.ui.qline_slot.setText(str(slot.id))
+                self.ui.qcomboBox_slot.setCurrentText(str(slot.id))
                 slot.apply()
                 break
     
