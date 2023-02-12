@@ -71,7 +71,7 @@ class Ui_WidgetIn(object):
         self.qlabel_frame.setObjectName("qlabel_frame")
         self.gridLayout_2.addWidget(self.qlabel_frame, 0, 0, 1, 1)
         self.groupBox_3 = QtWidgets.QGroupBox(self.groupBox_2)
-        self.groupBox_3.setMaximumSize(QtCore.QSize(16777215, 200))
+        self.groupBox_3.setMaximumSize(QtCore.QSize(16777215, 250))
         self.groupBox_3.setStyleSheet("background-color: rgb(173, 221, 230);\n"
 "border: 2px solid black;\n"
 "border-radius: 6px;\n"
@@ -118,13 +118,24 @@ class Ui_WidgetIn(object):
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.btn_apply = QtWidgets.QPushButton(self.groupBox_3)
-        self.btn_apply.setGeometry(QtCore.QRect(20, 150, 271, 32))
+        self.btn_apply.setGeometry(QtCore.QRect(20, 150, 271, 91))
         self.btn_apply.setStyleSheet("QPushButton {\n"
-"            background-color: rgb(255, 255, 255); \n"
-"        }\n"
-"QPushButton:pressed {\n"
-"            background-color: rgb(127, 127, 127);\n"
-"        }")
+"                background-color: #3498db;\n"
+"                color: #fff;\n"
+"                border-radius: 25px;\n"
+"                border: 2px solid #2980b9;\n"
+"                font-size: 18px;\n"
+"                font-weight: bold;\n"
+"            }\n"
+"            QPushButton:hover {\n"
+"                background-color: #2980b9;\n"
+"                cursor: pointer;\n"
+"            }\n"
+"            QPushButton:pressed {\n"
+"                background-color: #2980b9;\n"
+"                padding-left: 15px;\n"
+"                padding-top: 15px;\n"
+"            }")
         self.btn_apply.setObjectName("btn_apply")
         self.qcomboBox_slot = QtWidgets.QComboBox(self.groupBox_3)
         self.qcomboBox_slot.setGeometry(QtCore.QRect(180, 100, 111, 31))

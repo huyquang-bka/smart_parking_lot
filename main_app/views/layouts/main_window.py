@@ -36,7 +36,7 @@ class Ui_MainWindow(object):
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.btn_choose_file = QtWidgets.QPushButton(self.groupBox)
-        self.btn_choose_file.setGeometry(QtCore.QRect(21, 40, 141, 26))
+        self.btn_choose_file.setGeometry(QtCore.QRect(21, 40, 141, 61))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -44,24 +44,46 @@ class Ui_MainWindow(object):
         self.btn_choose_file.setSizePolicy(sizePolicy)
         self.btn_choose_file.setMinimumSize(QtCore.QSize(0, 0))
         self.btn_choose_file.setStyleSheet("QPushButton {\n"
-"            background-color: rgb(255, 255, 255); \n"
-"        }\n"
-"QPushButton:pressed {\n"
-"            background-color: rgb(127, 127, 127);\n"
-"        }")
+"                background-color: #3498db;\n"
+"                color: #fff;\n"
+"                border-radius: 25px;\n"
+"                border: 2px solid #2980b9;\n"
+"                font-size: 18px;\n"
+"                font-weight: bold;\n"
+"            }\n"
+"            QPushButton:hover {\n"
+"                background-color: #2980b9;\n"
+"                cursor: pointer;\n"
+"            }\n"
+"            QPushButton:pressed {\n"
+"                background-color: #2980b9;\n"
+"                padding-left: 15px;\n"
+"                padding-top: 15px;\n"
+"            }")
         self.btn_choose_file.setObjectName("btn_choose_file")
         self.btn_start = QtWidgets.QPushButton(self.groupBox)
-        self.btn_start.setGeometry(QtCore.QRect(22, 150, 141, 26))
+        self.btn_start.setGeometry(QtCore.QRect(22, 190, 141, 61))
         self.btn_start.setMinimumSize(QtCore.QSize(0, 0))
         self.btn_start.setStyleSheet("QPushButton {\n"
-"            background-color: rgb(255, 255, 255); \n"
-"        }\n"
-"QPushButton:pressed {\n"
-"            background-color: rgb(127, 127, 127);\n"
-"        }")
+"                background-color: #3498db;\n"
+"                color: #fff;\n"
+"                border-radius: 25px;\n"
+"                border: 2px solid #2980b9;\n"
+"                font-size: 18px;\n"
+"                font-weight: bold;\n"
+"            }\n"
+"            QPushButton:hover {\n"
+"                background-color: #2980b9;\n"
+"                cursor: pointer;\n"
+"            }\n"
+"            QPushButton:pressed {\n"
+"                background-color: #2980b9;\n"
+"                padding-left: 15px;\n"
+"                padding-top: 15px;\n"
+"            }")
         self.btn_start.setObjectName("btn_start")
         self.qtext_file_path = QtWidgets.QTextEdit(self.groupBox)
-        self.qtext_file_path.setGeometry(QtCore.QRect(21, 80, 141, 51))
+        self.qtext_file_path.setGeometry(QtCore.QRect(21, 120, 141, 51))
         self.qtext_file_path.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border: 2px solid black;\n"
 "border-radius: 6px;")

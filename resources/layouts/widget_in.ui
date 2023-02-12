@@ -112,7 +112,7 @@ border-radius: 6px;</string>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>200</height>
+          <height>250</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -241,16 +241,27 @@ border-radius: 6px;</string>
            <x>20</x>
            <y>150</y>
            <width>271</width>
-           <height>32</height>
+           <height>91</height>
           </rect>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-            background-color: rgb(255, 255, 255); 
-        }
-QPushButton:pressed {
-            background-color: rgb(127, 127, 127);
-        }</string>
+                background-color: #3498db;
+                color: #fff;
+                border-radius: 25px;
+                border: 2px solid #2980b9;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #2980b9;
+                cursor: pointer;
+            }
+            QPushButton:pressed {
+                background-color: #2980b9;
+                padding-left: 15px;
+                padding-top: 15px;
+            }</string>
          </property>
          <property name="text">
           <string>Chấp nhận</string>
