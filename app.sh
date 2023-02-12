@@ -3,5 +3,5 @@
 git add .
 git commit -m "update"
 git pull
-conda activate base
-python main.py
+cd ${pwd}
+conda run -n base python main.py
