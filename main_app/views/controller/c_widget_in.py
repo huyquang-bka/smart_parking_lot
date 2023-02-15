@@ -5,7 +5,7 @@ from ..controller.c_widget_slot import WidgetSlot
 from ...object.slot_object_2 import SlotObject
 from ...util.tools import detect
 import cv2
-import gTTS
+from gtts import gTTS
 import playsound
 
 class WidgetIn(QtWidgets.QWidget):
