@@ -1,9 +1,12 @@
+import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 from ..layouts.widget_in import Ui_WidgetIn
 from ..controller.c_widget_slot import WidgetSlot
 from ...object.slot_object_2 import SlotObject
 from ...util.tools import detect
 import cv2
+import gTTS
+import playsound
 
 class WidgetIn(QtWidgets.QWidget):
     def __init__(self, parent=None):
@@ -99,6 +102,11 @@ class WidgetIn(QtWidgets.QWidget):
         slot.type_vehicle = self.ui.qline_type_vehicle.text()
         slot.image = self.image
         slot.apply()
+        tts = gTTS(text=f'Vị trí {slot_id}', lang='vi')
+        tts.save("slot.mp3")
+        playsound.playsound("slot.mp3")
+        os.remove("slot.mp3")
+
     
     def start(self, fn):
         self.image = cv2.imread(fn)

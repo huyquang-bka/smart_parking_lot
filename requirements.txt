@@ -10,3 +10,5 @@ numpy
 psutil
 PyYaml
 seaborn
+gTTS
+playsound
