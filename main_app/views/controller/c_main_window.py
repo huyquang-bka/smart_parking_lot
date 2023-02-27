@@ -32,13 +32,13 @@ class MainWindow(QtWidgets.QMainWindow):
         # self.connect_signals()
         
     def connect_btn_signals(self):
-        self.ui.btn_choose_file.clicked.connect(self.choose_file)
+        self.ui.btn_choose_folder.clicked.connect(self.choose_folder)
         self.ui.btn_start.clicked.connect(self.start)
         
-    def choose_file(self):
-        file_name, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", QtCore.QDir.currentPath(), "Image Files (*.png *.jpg *.jpeg)")
-        if file_name:
-            self.ui.qtext_file_path.setText(file_name)
+    def choose_folder(self):
+        folder_name = QtWidgets.QFileDialog.getExistingDirectory(self, "Choose folder")
+        if folder_name:
+            self.ui.qtext_file_path.setText(folder_name)
             
     # def connect_signals(self):
     #     self.ui.combo_options.currentIndexChanged.connect(self.change_option)
@@ -56,8 +56,8 @@ class MainWindow(QtWidgets.QMainWindow):
             
     def start(self):
         if not self.ui.qtext_file_path.toPlainText():
-            QtWidgets.QMessageBox.warning(self, "Warning", "Please choose a file")
+            QtWidgets.QMessageBox.warning(self, "Warning", "Please choose a folder")
             return
-        self.current_widget.start(self.ui.qtext_file_path.toPlainText())
+        self.current_widget.start_(self.ui.qtext_file_path.toPlainText())
         
         

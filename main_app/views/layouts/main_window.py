@@ -35,15 +35,15 @@ class Ui_MainWindow(object):
 "")
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
-        self.btn_choose_file = QtWidgets.QPushButton(self.groupBox)
-        self.btn_choose_file.setGeometry(QtCore.QRect(21, 40, 141, 61))
+        self.btn_choose_folder = QtWidgets.QPushButton(self.groupBox)
+        self.btn_choose_folder.setGeometry(QtCore.QRect(21, 40, 141, 61))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_choose_file.sizePolicy().hasHeightForWidth())
-        self.btn_choose_file.setSizePolicy(sizePolicy)
-        self.btn_choose_file.setMinimumSize(QtCore.QSize(0, 0))
-        self.btn_choose_file.setStyleSheet("QPushButton {\n"
+        sizePolicy.setHeightForWidth(self.btn_choose_folder.sizePolicy().hasHeightForWidth())
+        self.btn_choose_folder.setSizePolicy(sizePolicy)
+        self.btn_choose_folder.setMinimumSize(QtCore.QSize(0, 0))
+        self.btn_choose_folder.setStyleSheet("QPushButton {\n"
 "                background-color: #3498db;\n"
 "                color: #fff;\n"
 "                border-radius: 25px;\n"
@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
 "                padding-left: 15px;\n"
 "                padding-top: 15px;\n"
 "            }")
-        self.btn_choose_file.setObjectName("btn_choose_file")
+        self.btn_choose_folder.setObjectName("btn_choose_file")
         self.btn_start = QtWidgets.QPushButton(self.groupBox)
         self.btn_start.setGeometry(QtCore.QRect(22, 190, 141, 61))
         self.btn_start.setMinimumSize(QtCore.QSize(0, 0))
@@ -104,7 +104,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btn_choose_file.setText(_translate("MainWindow", "Chọn ảnh"))
+        self.btn_choose_folder.setText(_translate("MainWindow", "Chọn thư mục"))
         self.btn_start.setText(_translate("MainWindow", "Chấp nhận"))
         self.qtext_file_path.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

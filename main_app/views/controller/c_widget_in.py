@@ -11,6 +11,7 @@ import playsound
 class WidgetIn(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.list_image = []
         self.ui = Ui_WidgetIn()
         self.widget_slot = WidgetSlot()
         self.groupBox_dict = {}
@@ -106,7 +107,17 @@ class WidgetIn(QtWidgets.QWidget):
         tts.save("slot.mp3")
         playsound.playsound("slot.mp3")
         os.remove("slot.mp3")
+        self.index += 1
+        if self.index == len(self.list_image):
+            QtWidgets.QMessageBox.warning(self, "Warning", "Đã hết ảnh!")
+        self.start(self.list_image[self.index])
 
+    def start_(self, fp):
+        self.index = 0
+        self.list_image = [os.path.join(fp, fn) for fn in os.listdir(fp) if (fn.endswith(".jpg") or fn.endswith(".jpg"))]
+        if not self.list_image:
+            QtWidgets.QMessageBox.warning(self, "Warning", "Thư mục không có ảnh phù hợp!")
+        self.start(self.list_image[self.index])
     
     def start(self, fn):
         self.image = cv2.imread(fn)

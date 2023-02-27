@@ -1,8 +1,7 @@
-PyQt5
+# PyQt5
 IPython
 pandas
 opencv-python==4.5.5.64
-tqdm
 torch==1.12.1
 torchvision
 matplotlib
@@ -10,5 +9,6 @@ numpy
 psutil
 PyYaml
 seaborn
+tqdm
 gTTS
 playsound
