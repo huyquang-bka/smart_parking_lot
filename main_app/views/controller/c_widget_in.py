@@ -7,6 +7,7 @@ from ...util.tools import detect
 import cv2
 from gtts import gTTS
 import playsound
+from random import shuffle
 
 class WidgetIn(QtWidgets.QWidget):
     def __init__(self, parent=None):
@@ -117,6 +118,7 @@ class WidgetIn(QtWidgets.QWidget):
         self.list_image = [os.path.join(fp, fn) for fn in os.listdir(fp) if (fn.endswith(".jpg") or fn.endswith(".jpg"))]
         if not self.list_image:
             QtWidgets.QMessageBox.warning(self, "Warning", "Thư mục không có ảnh phù hợp!")
+        shuffle(self.list_image)
         self.start(self.list_image[self.index])
     
     def start(self, fn):
