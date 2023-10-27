@@ -104,10 +104,10 @@ class WidgetIn(QtWidgets.QWidget):
         slot.type_vehicle = self.ui.qline_type_vehicle.text()
         slot.image = self.image
         slot.apply()
-        tts = gTTS(text=f'Vị trí {slot_id}', lang='vi')
-        tts.save("slot.mp3")
-        playsound.playsound("slot.mp3")
-        os.remove("slot.mp3")
+        #tts = gTTS(text=f'Vị trí {slot_id}', lang='vi')
+        #tts.save("slot.mp3")
+        #playsound.playsound("slot.mp3")
+        #os.remove("slot.mp3")
         self.index += 1
         if self.index == len(self.list_image):
             QtWidgets.QMessageBox.warning(self, "Warning", "Đã hết ảnh!")
