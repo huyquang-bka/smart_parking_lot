@@ -5,8 +5,8 @@ from ..controller.c_widget_slot import WidgetSlot
 from ...object.slot_object_2 import SlotObject
 from ...util.tools import detect
 import cv2
-from gtts import gTTS
-import playsound
+#from gtts import gTTS
+#import playsound
 from random import shuffle
 
 class WidgetIn(QtWidgets.QWidget):
